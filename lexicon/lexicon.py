@@ -8,7 +8,7 @@ class LEXICON:
     warning: str = 'the entry is empty'
 
     clear_button_text: str = 'C'
-    delete_button_text: str = '⌫'
+    delete_button_text: str = '◁'
     equals_button_text: str = ' = '
     point_button_text: str = '.'
 
