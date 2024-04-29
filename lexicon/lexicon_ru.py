@@ -5,6 +5,7 @@ class LEXICON_RU:
 
     empty_string: str = 'ㅤ'
     error: str = 'ERROR'
+    warning: str = 'the entry is empty'
 
     clear_button_text: str = 'C'
     delete_button_text: str = '<'
