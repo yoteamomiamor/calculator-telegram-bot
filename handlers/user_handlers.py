@@ -15,7 +15,6 @@ router.include_router(buttons_handlers.router)
 
 @router.message(CommandStart())
 async def process_start_command(message: Message):
-    await message.answer(text=LEXICON.start_message)
     await message.answer(
         text=LEXICON.empty_string,
         reply_markup=calculator_keyboard,
