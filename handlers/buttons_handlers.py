@@ -29,6 +29,8 @@ async def process_clear_button(callback: CallbackQuery):
             text=updated_entry,
             reply_markup=calculator_keyboard,
         )
+    else:
+        await callback.answer(text=LEXICON.warning)
 
 @router.callback_query(F.data == Callbacks.delete_button_clb)
 async def process_delete_button(callback: CallbackQuery):
@@ -39,6 +41,8 @@ async def process_delete_button(callback: CallbackQuery):
             text=updated_entry,
             reply_markup=calculator_keyboard,
             )
+    else:
+        await callback.answer(text=LEXICON.warning)
 
 
 @router.callback_query(F.data.in_(('0123456789')))
@@ -93,3 +97,5 @@ async def process_equals_button(callback: CallbackQuery):
                 text=updated_entry,
                 reply_markup=calculator_keyboard,
                 )
+    else:
+        await callback.answer(text=LEXICON.error)
