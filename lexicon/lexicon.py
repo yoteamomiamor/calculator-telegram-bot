@@ -4,6 +4,7 @@ class LEXICON:
 
     empty_string: str = 'ㅤ'
     warning: str = 'the entry is empty'
+    error: str = 'error... it happens ;('
 
     clear_button_text: str = 'C'
     delete_button_text: str = '«'
