@@ -87,6 +87,6 @@ async def process_operation_buttons(callback: CallbackQuery):
 @router.callback_query(F.data == Callbacks.equals_button_clb)
 async def process_equals_button(callback: CallbackQuery):
     await callback.message.edit_text(
-            text=updated_entry,
+            text=calculate(callback.message.text),
             reply_markup=calculator_keyboard,
             )
