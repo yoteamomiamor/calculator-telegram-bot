@@ -6,7 +6,8 @@ from aiogram.filters import CommandStart, Command
 from lexicon import LEXICON
 from keyboards import calculator_keyboard
 from callback_data import Callbacks
-from utils import add_digit, add_point, add_minus, add_sign, clear_entry, delete_last
+from utils.screen_updaters import *
+from utils import calculate
 
 
 router = Router()
@@ -78,6 +79,14 @@ async def process_operation_buttons(callback: CallbackQuery):
 
     if updated_entry:
         await callback.message.edit_text(
+            text=updated_entry,
+            reply_markup=calculator_keyboard,
+            )
+
+
+@router.callback_query(F.data == Callbacks.equals_button_clb)
+async def process_equals_button(callback: CallbackQuery):
+    await callback.message.edit_text(
             text=updated_entry,
             reply_markup=calculator_keyboard,
             )
