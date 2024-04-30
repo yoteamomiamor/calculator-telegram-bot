@@ -49,3 +49,19 @@ def add_sign(entry: str, sign: str) -> str | bool:
     if updated_entry == entry:
         return False
     return updated_entry
+
+
+def clear_entry(entry: str) -> str | bool:
+    if entry == LEXICON.empty_string:
+        return False
+    else:
+        return LEXICON.empty_string
+
+
+def delete_last(entry: str) -> str | bool:
+    if entry == LEXICON.empty_string:
+        return False
+    elif len(entry) <= 1:
+        return LEXICON.empty_string
+    else:
+        return entry[:-1]
