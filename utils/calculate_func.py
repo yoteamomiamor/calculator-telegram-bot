@@ -1,7 +1,11 @@
 from lexicon import LEXICON
 
-def calculate(entry: str) -> str:
+def calculate(entry: str) -> str | bool:
     try:
-        return entry + LEXICON.equals_button_text + eval(entry)
+        return ' '.join((
+            entry,
+            LEXICON.equals_button_text,
+            str(eval(entry))
+        ))
     except:
-        return LEXICON.error
+        return False
